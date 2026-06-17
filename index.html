@@ -1,49 +1,341 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Casamento</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main>
-      <section class="hero">
-        <div class="hero__content">
-          <p class="kicker">Nosso casamento</p>
-          <h1 id="casal"></h1>
-          <p class="date" id="data"></p>
-          <a class="button" id="whatsapp" href="#" target="_blank" rel="noreferrer">
-            Confirmar presença
-          </a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laura & Guilherme · Nosso Casamento</title>
+  <meta name="description"
+    content="Estamos nos casando. Confirme sua presença e acompanhe cada detalhe do nosso grande dia." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ====================== PRELOADER ====================== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__mono" id="plMono">L <span class="amp">&amp;</span> G</div>
+      <div class="preloader__line"></div>
+      <div class="preloader__label" id="plLabel">Laura &amp; Guilherme · 2026</div>
+    </div>
+    <div class="preloader__curtain"></div>
+  </div>
+
+  <div class="grain"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ====================== NAV ====================== -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__logo" id="navLogo">L <span class="amp">&amp;</span> G</a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#historia">História</a>
+      <a href="#evento">Evento</a>
+      <a href="#programacao">Programação</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#presentes">Presentes</a>
+      <a href="#rsvp">Confirmar</a>
+      <a href="painel.html" class="nav__cta">Painel dos Noivos</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- ====================== HERO ====================== -->
+  <section class="hero" id="hero">
+    <div class="hero__watermark" id="heroYear" aria-hidden="true">2026</div>
+    <span class="hero__side left">The Wedding Of</span>
+    <span class="hero__side right" id="heroCity">São Paulo · Brasil</span>
+    <div class="hero__inner">
+      <p class="eyebrow hero__pre">Save the Date</p>
+      <h1 class="hero__names" id="heroNames">Laura <span class="amp">&amp;</span> Guilherme </h1>
+      <div class="hero__rule"></div>
+      <p class="hero__date" id="heroDate"><b>15 de Novembro de 2026</b> · Sábado</p>
+
+      <div class="countdown" id="countdown" aria-label="Contagem regressiva">
+        <div class="countdown__item"><span class="countdown__num" id="cd-days">00</span><span
+            class="countdown__label">Dias</span></div>
+        <div class="countdown__item"><span class="countdown__num" id="cd-hours">00</span><span
+            class="countdown__label">Horas</span></div>
+        <div class="countdown__item"><span class="countdown__num" id="cd-mins">00</span><span
+            class="countdown__label">Min</span></div>
+        <div class="countdown__item"><span class="countdown__num" id="cd-secs">00</span><span
+            class="countdown__label">Seg</span></div>
+      </div>
+    </div>
+    <a href="#historia" class="hero__scroll">Descubra</a>
+  </section>
+
+  <!-- ====================== FAIXA / CITAÇÃO ====================== -->
+  <section class="band">
+    <div class="container">
+      <p class="eyebrow">Nº 01 — O Convite</p>
+      <p class="band__quote" id="bandQuote">"E assim, entre tantos caminhos possíveis, <em>escolhemos um ao outro</em> —
+        para todos os dias que virão."</p>
+      <p class="band__author" id="bandAuthor">Com amor, Laura &amp; Guilherme </p>
+    </div>
+  </section>
+
+  <!-- ====================== HISTÓRIA ====================== -->
+  <section class="section story" id="historia">
+    <div class="container story__grid">
+      <div class="story__img">
+        <div class="figure reveal">
+          <div class="figure__ph"><img class="photo" id="storyPhoto"
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"
+              alt="O casal" loading="lazy" /></div>
         </div>
-      </section>
-
-      <section class="section">
-        <h2>Informações</h2>
-        <div class="info-grid">
-          <article>
-            <span>Horário</span>
-            <strong id="horario"></strong>
-          </article>
-          <article>
-            <span>Local</span>
-            <strong id="local"></strong>
-          </article>
-          <article>
-            <span>Endereço</span>
-            <strong id="endereco"></strong>
-          </article>
+        <span class="story__caption" id="storyCaption">Laura &amp; Guilherme </span>
+      </div>
+      <div class="story__text reveal d1">
+        <span class="snum">02 — Nossa História</span>
+        <h2 id="storyTitle">De um acaso<br>para <em>sempre</em></h2>
+        <div id="storyParas">
+          <p>Tudo começou numa tarde de outono, numa fila de café que parecia não andar. Um sorriso trocado, uma
+            conversa que durou horas — e a certeza de que algumas pessoas chegam para ficar.</p>
+          <p>Foram cinco anos de viagens, risadas, planos rabiscados em guardanapos e a descoberta de que o melhor lugar
+            do mundo é ao lado um do outro. Agora, queremos celebrar esse amor com quem amamos.</p>
         </div>
-      </section>
+        <p class="story__sign" id="storySign">Laura &amp; Guilherme </p>
+      </div>
+    </div>
+  </section>
 
-      <section class="section message">
-        <h2>Recado</h2>
-        <p id="recado"></p>
-      </section>
-    </main>
+  <!-- ====================== EVENTO ====================== -->
+  <section class="section info" id="evento">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="snum">03 — Onde &amp; Quando</span>
+        <h2>O grande <em>dia</em></h2>
+        <p class="lead">Reservamos cada detalhe com carinho. Anote na agenda e venha celebrar conosco.</p>
+      </div>
+      <div class="info__grid">
+        <div class="info-card reveal">
+          <div class="info-card__icon">⛪</div>
+          <h3>Cerimônia</h3>
+          <p class="place" id="cerName">Capela Nossa Senhora das Graças</p>
+          <p class="addr" id="cerAddr">Rua das Flores, 123 — Jardins, São Paulo</p>
+          <p class="when" id="cerTime">15 Nov 2026 · 16h00</p>
+          <a class="btn btn-outline" id="cerMaps" href="https://maps.google.com/?q=Jardins+Sao+Paulo" target="_blank"
+            rel="noopener"><span>Ver no mapa</span></a>
+        </div>
+        <div class="info-card reveal d1">
+          <div class="info-card__icon">🥂</div>
+          <h3>Recepção</h3>
+          <p class="place" id="recName">Villa Verde Eventos</p>
+          <p class="addr" id="recAddr">Estrada do Vinho, 980 — São Roque, SP</p>
+          <p class="when" id="recTime">15 Nov 2026 · 18h30</p>
+          <a class="btn btn-outline" id="recMaps" href="https://maps.google.com/?q=Sao+Roque+SP" target="_blank"
+            rel="noopener"><span>Ver no mapa</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="dados.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <!-- ====================== PROGRAMAÇÃO ====================== -->
+  <section class="section" id="programacao">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="snum">04 — A Celebração</span>
+        <h2>Como será o <em>dia</em></h2>
+      </div>
+      <div class="timeline" id="scheduleList">
+        <div class="tl-item reveal"><span class="tl-time">16h00</span>
+          <h4>Cerimônia</h4>
+          <p>A celebração do nosso "sim" na capela.</p>
+        </div>
+        <div class="tl-item reveal"><span class="tl-time">18h30</span>
+          <h4>Recepção</h4>
+          <p>Welcome drink e boas-vindas no jardim.</p>
+        </div>
+        <div class="tl-item reveal"><span class="tl-time">20h00</span>
+          <h4>Jantar</h4>
+          <p>Menu assinado pelo chef, à luz de velas.</p>
+        </div>
+        <div class="tl-item reveal"><span class="tl-time">22h00</span>
+          <h4>Festa</h4>
+          <p>Pista aberta — venha dançar até o fim!</p>
+        </div>
+        <div class="tl-item reveal"><span class="tl-time">02h00</span>
+          <h4>Bem-casados</h4>
+          <p>Um docinho de despedida para adoçar a volta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== GALERIA ====================== -->
+  <section class="section gallery" id="galeria">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="snum">05 — Momentos</span>
+        <h2>Nossa <em>galeria</em></h2>
+        <p class="lead">Editem as fotos no Painel dos Noivos, em "Modo de edição".</p>
+      </div>
+      <div class="gallery__grid" id="galleryGrid">
+        <div class="gallery__item g1 figure reveal">
+          <div class="figure__ph"><img class="photo"
+              src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=700&q=80" alt=""
+              loading="lazy" /></div>
+        </div>
+        <div class="gallery__item g2 figure reveal d1">
+          <div class="figure__ph"><img class="photo"
+              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=80" alt=""
+              loading="lazy" /></div>
+        </div>
+        <div class="gallery__item g3 figure reveal">
+          <div class="figure__ph"><img class="photo"
+              src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=700&q=80" alt=""
+              loading="lazy" /></div>
+        </div>
+        <div class="gallery__item g4 figure reveal d1">
+          <div class="figure__ph"><img class="photo"
+              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80" alt=""
+              loading="lazy" /></div>
+        </div>
+        <div class="gallery__item g5 figure reveal d2">
+          <div class="figure__ph"><img class="photo"
+              src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=700&q=80" alt=""
+              loading="lazy" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== RSVP ====================== -->
+  <section class="section rsvp" id="rsvp">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="snum">06 — Confirmação</span>
+        <h2>Você <em>vem</em>?</h2>
+        <p class="lead">Sua presença é o maior presente. Confirme até <strong id="rsvpDeadline">15 de Outubro de
+            2026</strong>.</p>
+      </div>
+      <form class="rsvp-form reveal" id="rsvpForm">
+        <div class="field">
+          <label for="r-name">Nome completo</label>
+          <input type="text" id="r-name" name="name" placeholder="Seu nome" required />
+        </div>
+        <div class="rsvp-row">
+          <div class="field">
+            <label for="r-going">Você comparecerá?</label>
+            <select id="r-going" name="going" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="Sim, estarei lá! 🎉">Sim, estarei lá!</option>
+              <option value="Infelizmente não poderei ir 😢">Infelizmente não poderei</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="r-guests">Nº de pessoas</label>
+            <select id="r-guests" name="guests">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="r-msg">Restrição alimentar / recado</label>
+          <textarea id="r-msg" name="msg" rows="2" placeholder="Opcional"></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid"><span>Confirmar pelo WhatsApp</span></button>
+        <p class="rsvp__note">Ao confirmar, abrimos o WhatsApp com sua resposta pronta para enviar aos noivos.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ====================== PRESENTES ====================== -->
+  <section class="section gifts" id="presentes">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="snum">07 — Lista de Presentes</span>
+        <h2>Para ajudar a <em>começar</em></h2>
+        <p class="lead">O mais importante é ter você conosco. Mas, se quiser nos presentear, deixamos algumas opções.
+        </p>
+      </div>
+      <div class="gifts__grid">
+        <div class="gift-card reveal">
+          <div class="gift-card__icon">✦</div>
+          <h3>Pix dos Sonhos</h3>
+          <p>Contribua com nossa lua de mel. Toque na chave para copiar.</p>
+          <span class="pix-key" id="pixKey" data-pix="Laura.Guilherme  @email.com">⎘ Laura.Guilherme @email.com</span>
+        </div>
+        <div class="gift-card reveal d1">
+          <div class="gift-card__icon">⌂</div>
+          <h3>Nosso Lar</h3>
+          <p>Itens para montar nosso primeiro apartamento juntos.</p>
+          <a class="btn btn-ghost" id="giftList" href="#" target="_blank" rel="noopener"><span>Ver lista</span></a>
+        </div>
+        <div class="gift-card reveal d2">
+          <div class="gift-card__icon">✈</div>
+          <h3>Lua de Mel</h3>
+          <p>Cotas para tornar nossa viagem dos sonhos realidade.</p>
+          <a class="btn btn-ghost" id="giftHoney" href="#" target="_blank" rel="noopener"><span>Ver cotas</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FAQ ====================== -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="snum">08 — Dúvidas</span>
+        <h2>Perguntas <em>frequentes</em></h2>
+      </div>
+      <div class="faq__list" id="faqList">
+        <div class="faq-item reveal">
+          <button class="faq-item__q">Qual é o traje? <span class="icon">+</span></button>
+          <div class="faq-item__a">
+            <p>Esporte fino / passeio completo. Sugerimos tons sóbrios — evitem branco e off-white, reservados para a
+              noiva. 😊</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-item__q">Posso levar crianças? <span class="icon">+</span></button>
+          <div class="faq-item__a">
+            <p>Amamos as crianças! Mas, pensando no conforto de todos, a celebração será para adultos. Agradecemos a
+              compreensão.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-item__q">Tem estacionamento? <span class="icon">+</span></button>
+          <div class="faq-item__a">
+            <p>Sim, a recepção conta com estacionamento gratuito e manobrista no local.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-item__q">Até quando confirmo presença? <span class="icon">+</span></button>
+          <div class="faq-item__a">
+            <p>Pedimos a gentileza de confirmar até 15 de Outubro de 2026, pela seção de confirmação aqui no site.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer">
+    <div class="footer__mono">❦</div>
+    <p class="footer__names" id="footerNames">Laura <span class="amp">&amp;</span> Guilherme </p>
+    <p class="footer__date" id="footerDate">15 · 11 · 2026</p>
+    <p class="footer__hash" id="footerHash">#LauraEGuilherme 2026</p>
+    <p class="footer__copy">Feito com amor · <a href="painel.html">Painel dos Noivos</a></p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/cloud.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>

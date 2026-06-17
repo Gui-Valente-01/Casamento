@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel dos Noivos · Laura & Guilherme</title>
+  <meta name="description" content="Área de gestão e edição do casamento." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/painel.css" />
+</head>
+<body class="painel">
+
+  <!-- ====================== TELA DE LOGIN (nuvem) ====================== -->
+  <div class="lock" id="lockScreen">
+    <div class="grain"></div>
+    <div class="lock__box">
+      <div class="lock__mono">L <span>&amp;</span> G</div>
+      <h1>Painel dos Noivos</h1>
+      <p class="lock__sub" id="lockSub">Digite a senha de edição para acessar.</p>
+      <form id="lockForm">
+        <input type="password" id="lockPass" placeholder="Senha de edição" autocomplete="current-password" />
+        <button type="submit" class="btn btn-solid"><span>Entrar</span></button>
+      </form>
+      <p class="lock__err" id="lockErr"></p>
+      <a href="index.html" class="lock__back">← Voltar ao site</a>
+    </div>
+  </div>
+
+  <!-- ====================== TOPBAR ====================== -->
+  <header class="pnav" id="pnav" style="display:none;">
+    <a href="index.html" class="pnav__brand">L <span>&amp;</span> G · Painel</a>
+    <div class="pnav__right">
+      <span class="pnav__date" id="pnavCountdown">—</span>
+      <span class="pnav__status" id="pnavStatus"></span>
+      <a href="index.html" class="pnav__home">← Ver o site</a>
+      <button class="pnav__home" id="logoutBtn" style="display:none;">Sair</button>
+    </div>
+  </header>
+
+  <main class="pwrap" id="app" style="display:none;">
+    <div class="phead">
+      <p class="eyebrow">Área dos noivos</p>
+      <h1>Gestão do nosso <em>casamento</em></h1>
+      <p id="appSub">Organizem tudo num só lugar — e editem o site quando quiserem. 💍</p>
+    </div>
+
+    <!-- Abas -->
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-view="plan">Planejamento</button>
+      <button class="tab" data-view="site">Conteúdo do site</button>
+      <button class="tab" data-view="config">Configurações</button>
+    </div>
+
+    <!-- ============ VIEW: PLANEJAMENTO ============ -->
+    <section class="view" id="view-plan">
+      <section class="stats">
+        <div class="stat"><p class="stat__label">Contagem</p><p class="stat__value" id="statDays">—</p><p class="stat__sub">dias para o grande dia</p></div>
+        <div class="stat"><p class="stat__label">Checklist</p><p class="stat__value" id="statChk">0%</p><p class="stat__sub" id="statChkSub">0 de 0 concluídos</p><div class="progress"><div class="progress__bar" id="statChkBar"></div></div></div>
+        <div class="stat"><p class="stat__label">Orçamento</p><p class="stat__value" id="statBudget">R$ 0</p><p class="stat__sub">total planejado</p></div>
+        <div class="stat"><p class="stat__label">Próxima visita</p><p class="stat__value" id="statVisit">—</p><p class="stat__sub" id="statVisitSub">nenhuma agendada</p></div>
+      </section>
+
+      <div class="pgrid">
+        <section class="panel">
+          <div class="panel__head">
+            <div><span class="eyebrow">Agenda</span><h2>Calendário de visitas</h2></div>
+            <button class="btn btn-ghost" id="addVisitBtn">+ Marcar visita</button>
+          </div>
+          <div class="panel__body">
+            <div class="cal__top">
+              <span class="cal__title" id="calTitle">—</span>
+              <div class="cal__nav">
+                <button id="calPrev" aria-label="Mês anterior">‹</button>
+                <button id="calToday" style="width:auto;padding:0 14px;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;">Hoje</button>
+                <button id="calNext" aria-label="Próximo mês">›</button>
+              </div>
+            </div>
+            <div class="cal__weekdays"><span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span></div>
+            <div class="cal__days" id="calDays"></div>
+            <div class="visits"><h3>Próximas visitas</h3><div id="visitList"></div></div>
+          </div>
+        </section>
+
+        <div>
+          <section class="panel" style="margin-bottom:26px;">
+            <div class="panel__head"><div><span class="eyebrow">Tarefas</span><h2>Checklist</h2></div></div>
+            <div class="panel__body">
+              <form class="chk__add" id="chkForm">
+                <input type="text" id="chkInput" placeholder="Nova tarefa…" required />
+                <select id="chkCat">
+                  <option value="Cerimônia">Cerimônia</option>
+                  <option value="Recepção">Recepção</option>
+                  <option value="Fornecedores">Fornecedores</option>
+                  <option value="Roupas & Beleza">Roupas &amp; Beleza</option>
+                  <option value="Convidados">Convidados</option>
+                  <option value="Outros">Outros</option>
+                </select>
+                <button type="submit" aria-label="Adicionar">+</button>
+              </form>
+              <div id="chkList"></div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel__head"><div><span class="eyebrow">Finanças</span><h2>Orçamento</h2></div></div>
+            <div class="panel__body">
+              <form class="bud__add" id="budForm">
+                <input type="text" id="budName" placeholder="Item (ex.: Buffet)" required />
+                <input type="number" id="budVal" placeholder="R$ 0" min="0" step="0.01" required />
+                <button type="submit" aria-label="Adicionar">+</button>
+              </form>
+              <div id="budList"></div>
+              <div class="bud-total"><span>Total planejado</span><strong id="budTotal">R$ 0</strong></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIEW: CONTEÚDO DO SITE ============ -->
+    <section class="view hidden" id="view-site">
+      <section class="panel">
+        <div class="panel__head">
+          <div><span class="eyebrow">Edição</span><h2>Conteúdo do site</h2></div>
+          <button class="btn btn-solid" id="saveSiteBtn"><span>Salvar e publicar</span></button>
+        </div>
+        <div class="panel__body">
+          <p class="editor-note">As mudanças aqui aparecem no site para todos. Clique em <strong>Salvar e publicar</strong> ao terminar.</p>
+          <div id="siteEditor"></div>
+          <div class="editor-foot">
+            <button class="btn btn-solid" id="saveSiteBtn2"><span>Salvar e publicar</span></button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ============ VIEW: CONFIGURAÇÕES ============ -->
+    <section class="view hidden" id="view-config">
+      <div class="pgrid">
+        <section class="panel">
+          <div class="panel__head"><div><span class="eyebrow">Acesso</span><h2>Senha de edição</h2></div></div>
+          <div class="panel__body">
+            <p class="editor-note">Troque a senha que vocês dois usam para entrar no painel.</p>
+            <form id="passForm">
+              <div class="field"><label>Senha atual</label><input type="password" id="passOld" /></div>
+              <div class="field"><label>Nova senha</label><input type="password" id="passNew" /></div>
+              <div class="field"><label>Confirmar nova senha</label><input type="password" id="passNew2" /></div>
+              <button type="submit" class="btn btn-solid"><span>Atualizar senha</span></button>
+            </form>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel__head"><div><span class="eyebrow">Status</span><h2>Conexão</h2></div></div>
+          <div class="panel__body">
+            <div id="connStatus" class="conn"></div>
+            <p class="editor-note" style="margin-top:18px;">O conteúdo e o planejamento ficam salvos na nuvem e sincronizam entre você e sua noiva automaticamente.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================== MODAL: NOVA VISITA ====================== -->
+  <div class="modal" id="visitModal">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__box">
+      <h3>Marcar visita</h3>
+      <p class="sub">Agende uma visita a um espaço, buffet ou fornecedor.</p>
+      <form id="visitForm">
+        <div class="field"><label for="vLocal">Local / Fornecedor</label><input type="text" id="vLocal" placeholder="Ex.: Villa Verde Eventos" required /></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div class="field"><label for="vData">Data</label><input type="date" id="vData" required /></div>
+          <div class="field"><label for="vHora">Horário</label><input type="time" id="vHora" /></div>
+        </div>
+        <div class="field"><label for="vObs">Observações</label><textarea id="vObs" rows="2" placeholder="Opcional"></textarea></div>
+        <div class="modal__actions">
+          <button type="button" class="btn btn-ghost" data-close>Cancelar</button>
+          <button type="submit" class="btn btn-solid"><span>Salvar visita</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/cloud.js"></script>
+  <script src="assets/js/painel.js"></script>
+</body>
+</html>
