@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Site de casamento de Laura e Guilherme com informacoes do evento e confirmacao de presenca."
+    />
+    <title>Laura e Guilherme | Casamento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Navegacao principal">
+      <a class="brand" href="#inicio">Laura & Guilherme</a>
+      <nav class="nav-links">
+        <a href="#historia">Historia</a>
+        <a href="#evento">Evento</a>
+        <a href="#rsvp">RSVP</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <img
+          class="hero-image"
+          src="assets/hero-wedding.png"
+          alt="Mesa elegante de casamento ao ar livre com flores e luzes suaves"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Vamos celebrar juntos</p>
+          <h1>Laura e Guilherme</h1>
+          <p class="hero-date">12 de outubro de 2026</p>
+          <div class="hero-actions" aria-label="Acoes principais">
+            <a class="button primary" href="#rsvp">Confirmar presenca</a>
+            <a class="button secondary" href="#evento">Ver detalhes</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro" id="historia">
+        <div class="section-heading">
+          <p class="eyebrow">Nossa historia</p>
+          <h2>Um novo capitulo com as pessoas que amamos por perto.</h2>
+        </div>
+        <p>
+          Estamos preparando um dia leve, bonito e cheio de afeto para celebrar
+          esse encontro. Este site e a primeira versao para teste, com os dados
+          principais do casamento e um fluxo simples de confirmacao.
+        </p>
+      </section>
+
+      <section class="section details" id="evento">
+        <div class="detail-card">
+          <span class="detail-label">Cerimonia</span>
+          <h3>17h30</h3>
+          <p>Jardim principal</p>
+        </div>
+        <div class="detail-card">
+          <span class="detail-label">Recepcao</span>
+          <h3>19h00</h3>
+          <p>Jantar, musica e celebracao</p>
+        </div>
+        <div class="detail-card">
+          <span class="detail-label">Local</span>
+          <h3>Espaco a definir</h3>
+          <p>Endereco final entra aqui antes do envio em massa.</p>
+        </div>
+      </section>
+
+      <section class="section rsvp" id="rsvp">
+        <div class="section-heading">
+          <p class="eyebrow">Confirmacao</p>
+          <h2>Avise se voce vem comemorar com a gente.</h2>
+        </div>
+        <form class="rsvp-form" id="rsvp-form">
+          <label>
+            Nome
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+          <label>
+            Numero de convidados
+            <select name="guests" required>
+              <option value="">Selecione</option>
+              <option value="1">1 pessoa</option>
+              <option value="2">2 pessoas</option>
+              <option value="3">3 pessoas</option>
+              <option value="4">4 pessoas</option>
+            </select>
+          </label>
+          <label>
+            Recado
+            <textarea name="message" rows="4" placeholder="Opcional"></textarea>
+          </label>
+          <button class="button primary" type="submit">Gerar confirmacao</button>
+          <p class="form-note" id="form-note" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Laura e Guilherme</p>
+      <a href="#inicio">Voltar ao topo</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
