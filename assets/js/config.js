@@ -18,17 +18,17 @@ window.SUPABASE = {
 window.WEDDING_DEFAULT = {
   noiva: "Laura",
   noivo: "Guilherme",
-  city: "São Paulo · Brasil",
+  city: "Apucarana · Brasil",
   hashtag: "#LauraEGuilherme2026",
 
   // Data/hora da cerimônia no formato ISO local: AAAA-MM-DDTHH:MM
-  date: "2026-11-15T16:00",
-  dateLabel: "15 de Novembro de 2026",
+  date: "2028-03-20T16:00",
+  dateLabel: "Só Deus sabe de 2028",
   weekday: "Sábado",
-  rsvpDeadline: "15 de Outubro de 2026",
+  rsvpDeadline: "Só Deus sabe de 2028",
 
   // WhatsApp p/ receber RSVP (DDI+DDD+número, só dígitos)
-  whatsapp: "5511999998888",
+  whatsapp: "5543999873008",
 
   quote: "E assim, entre tantos caminhos possíveis, escolhemos um ao outro — para todos os dias que virão.",
 
@@ -41,16 +41,16 @@ window.WEDDING_DEFAULT = {
   },
 
   ceremony: {
-    name: "Capela Nossa Senhora das Graças",
-    address: "Rua das Flores, 123 — Jardins, São Paulo",
-    time: "15 Nov 2026 · 16h00",
-    maps: "https://maps.google.com/?q=Jardins+Sao+Paulo",
+    name: "Kawai Eventos",
+    address: "Rua das Flores, 123 — Jardins, Apucarana",
+    time: "Só Deus sabe de 2028 · 16h00",
+    maps: "https://maps.google.com/?q=Jardins+Apucarana",
   },
   reception: {
-    name: "Villa Verde Eventos",
-    address: "Estrada do Vinho, 980 — São Roque, SP",
-    time: "15 Nov 2026 · 18h30",
-    maps: "https://maps.google.com/?q=Sao+Roque+SP",
+    name: "Kawai Eventos",
+    address: "Estrada do Vinho, 980 — Apucarana, PR",
+    time: "Só Deus sabe de 2028 · 18h30",
+    maps: "https://maps.google.com/?q=Apucarana+PR",
   },
 
   schedule: [
