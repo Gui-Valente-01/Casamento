@@ -1,34 +1,26 @@
 /* =========================================================
-   CONFIGURAÇÃO + CONTEÚDO PADRÃO
-   - Conexão com a nuvem (Supabase) fica em SUPABASE.
-   - WEDDING_DEFAULT é o conteúdo inicial e também o "fallback"
-     mostrado caso a nuvem esteja indisponível ou ainda não configurada.
-   Vocês NÃO precisam editar este arquivo no dia a dia.
-   Para alterar informações do site, usem:
-   assets/js/informacoes-do-casamento.js
+   EDITE AQUI AS INFORMAÇÕES DO SITE
+
+   Este é o arquivo principal para vocês alterarem:
+   nomes, data, local, horários, recado, fotos, Pix, links e perguntas.
+
+   Depois de salvar e enviar para o GitHub, o site atualiza sozinho.
    ========================================================= */
 
-/* ---- Conexão com a nuvem (preenchido na configuração do Supabase) ---- */
-window.SUPABASE = {
-  url: "",        // ex.: https://xxxxxxxx.supabase.co
-  anonKey: "",    // chave pública (publishable / anon)
-};
-
-/* ---- Conteúdo padrão do casamento ---- */
 window.WEDDING_DEFAULT = {
   noiva: "Laura",
   noivo: "Guilherme",
   city: "São Paulo · Brasil",
   hashtag: "#LauraEGuilherme2026",
 
-  // Data/hora da cerimônia no formato ISO local: AAAA-MM-DDTHH:MM
+  // Data/hora da cerimônia no formato: AAAA-MM-DDTHH:MM
   date: "2026-11-15T16:00",
   dateLabel: "15 de Novembro de 2026",
   weekday: "Sábado",
   rsvpDeadline: "15 de Outubro de 2026",
 
-  // WhatsApp p/ receber RSVP (DDI+DDD+número, só dígitos)
-  whatsapp: "5511999998888",
+  // WhatsApp para receber confirmações. Use DDI + DDD + número, só com dígitos.
+  whatsapp: "5543999873008",
 
   quote: "E assim, entre tantos caminhos possíveis, escolhemos um ao outro — para todos os dias que virão.",
 
@@ -46,6 +38,7 @@ window.WEDDING_DEFAULT = {
     time: "15 Nov 2026 · 16h00",
     maps: "https://maps.google.com/?q=Jardins+Sao+Paulo",
   },
+
   reception: {
     name: "Villa Verde Eventos",
     address: "Estrada do Vinho, 980 — São Roque, SP",
@@ -68,6 +61,7 @@ window.WEDDING_DEFAULT = {
     "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80",
     "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=700&q=80",
   ],
+
   storyPhoto: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80",
 
   gifts: {
